@@ -6,9 +6,10 @@ Personal bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 
 ## Apps
 
-| App                        | Description                                                                   |
-| -------------------------- | ----------------------------------------------------------------------------- |
+| App | Description |
+| --- | --- |
 | [usque](bucket/usque.json) | Open-source reimplementation of the Cloudflare WARP client's MASQUE protocol. |
+| [usque-app](bucket/usque-app.json) | High-performance cross-platform GUI for Cloudflare WARP client's MASQUE protocol. |
 
 ## How do I add a new manifest?
 

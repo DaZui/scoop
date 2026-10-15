@@ -1,0 +1,54 @@
+{
+    "version": "0.3.1",
+    "description": "High-performance cross-platform GUI for Cloudflare WARP client's MASQUE protocol.",
+    "homepage": "https://github.com/GeorgeXie2333/usque-app",
+    "license": "MIT",
+    "notes": [
+        "The official Windows installer is a WiX bundle, so this manifest extracts the bundled MSI into Scoop's app directory.",
+        "In-app update and the registered uninstaller are not available in this portable layout.",
+        "TUN/VPN mode installs the bundled Wintun driver at runtime and requires administrator rights."
+    ],
+    "depends": "dark",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v0.3.1/usque-v0.3.1-windows-x64-v2.exe",
+            "hash": "9039dece6dde97fcc456b79684069a547626ee77c82190d5774a62040f42fd6a"
+        },
+        "arm64": {
+            "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v0.3.1/usque-v0.3.1-windows-arm64.exe",
+            "hash": "5999ba8c7cb98866e037ad3fc01dda44b5bfec78beca7cbe4161c8f506cbb7e5"
+        }
+    },
+    "installer": {
+        "script": [
+            "# 'Expand-DarkArchive' cannot handle the localized transform payloads of this bundle, so call 'dark' directly",
+            "Invoke-ExternalCommand -FilePath (Get-HelperPath -Helper Dark) -ArgumentList @('-nologo', '-x', \"$dir\\.wix\", \"$dir\\$fname\") -LogPath \"$dir\\dark.log\" | Out-Null",
+            "$msi = Get-ChildItem \"$dir\\.wix\\AttachedContainer\" -File | Sort-Object Length -Descending | Select-Object -First 1",
+            "Expand-MsiArchive $msi.FullName \"$dir\\.msi\"",
+            "$appDir = Get-ChildItem \"$dir\\.msi\" -Recurse -Filter 'usque.exe' | Select-Object -First 1 -ExpandProperty DirectoryName",
+            "Move-Item \"$appDir\\*\" \"$dir\" -Force",
+            "Remove-Item \"$dir\\.msi\", \"$dir\\.wix\", \"$dir\\dark.log\", \"$dir\\$fname\" -Recurse -Force"
+        ]
+    },
+    "shortcuts": [
+        [
+            "usque.exe",
+            "Usque"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v$version/usque-v$version-windows-x64-v2.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v$version/usque-v$version-windows-arm64.exe"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v$version/SHA256SUMS",
+            "regex": "$sha256\\s+$basename"
+        }
+    }
+}
