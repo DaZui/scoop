@@ -1,0 +1,20 @@
+{
+    "version": "1.19.5",
+    "description": "Cross-platform network proxy client based on Mihomo.",
+    "homepage": "https://github.com/appshubcc/Bettbox",
+    "license": "GPL-3.0-only",
+    "notes": "This extracts the official installer into Scoop's managed directory; its helper-service registration and registered uninstaller are not run.",
+    "url": "https://github.com/appshubcc/Bettbox/releases/download/v1.19.5/Bettbox-1.19.5-windows-amd64-setup.exe",
+    "hash": "34c54f8214c394f52d2165bb8e3b9029da92635d9f64e3992355cdf1830d29d7",
+    "innosetup": true,
+    "shortcuts": [
+        [
+            "Bettbox.exe",
+            "Bettbox"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/appshubcc/Bettbox/releases/download/v$version/Bettbox-$version-windows-amd64-setup.exe"
+    }
+}
