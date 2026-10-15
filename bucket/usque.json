@@ -1,0 +1,39 @@
+{
+    "version": "4.2.1",
+    "description": "Open-source reimplementation of the Cloudflare WARP client's MASQUE protocol.",
+    "homepage": "https://github.com/Diniboy1123/usque",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Diniboy1123/usque/releases/download/v4.2.1/usque_4.2.1_windows_amd64.zip",
+            "hash": "f6f7f0a1a2bc9bcc15cf563ec1f892d00690a92c086b23ed3211b802209099e7"
+        },
+        "32bit": {
+            "url": "https://github.com/Diniboy1123/usque/releases/download/v4.2.1/usque_4.2.1_windows_386.zip",
+            "hash": "be50fb3d9970d5356733ad41ab2a33b932eb1a1b7582062ddc40b5f6e95e1167"
+        },
+        "arm64": {
+            "url": "https://github.com/Diniboy1123/usque/releases/download/v4.2.1/usque_4.2.1_windows_arm64.zip",
+            "hash": "52f62bc45dc7b0a1910c92f76286d1970b8ca76a4aee1aa62de22140f02af131"
+        }
+    },
+    "bin": "usque.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Diniboy1123/usque/releases/download/v$version/usque_$version_windows_amd64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/Diniboy1123/usque/releases/download/v$version/usque_$version_windows_386.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/Diniboy1123/usque/releases/download/v$version/usque_$version_windows_arm64.zip"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/Diniboy1123/usque/releases/download/v$version/checksums.txt",
+            "regex": "$sha256\\s+$basename"
+        }
+    }
+}
