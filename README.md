@@ -8,6 +8,7 @@ Personal bucket for [Scoop](https://scoop.sh), the Windows command-line installe
 
 | App | Description |
 | --- | --- |
+| [Bettbox](bucket/bettbox.json) | Cross-platform network proxy client based on Mihomo. |
 | [usque](bucket/usque.json) | Open-source reimplementation of the Cloudflare WARP client's MASQUE protocol. |
 | [usque-app](bucket/usque-app.json) | High-performance cross-platform GUI for Cloudflare WARP client's MASQUE protocol. |
 
