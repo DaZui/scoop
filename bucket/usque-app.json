@@ -1,5 +1,5 @@
 {
-    "version": "0.3.4",
+    "version": "0.3.5",
     "description": "High-performance cross-platform GUI for Cloudflare WARP client's MASQUE protocol.",
     "homepage": "https://github.com/GeorgeXie2333/usque-app",
     "license": "MIT",
@@ -9,12 +9,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v0.3.4/usque-v0.3.4-windows-x64-v2.msi",
-            "hash": "82cc91be45185d76d549690fca8c7845764a700214756a12ad5da7c82e3cdfd3"
+            "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v0.3.5/usque-v0.3.5-windows-x64-v2.msi",
+            "hash": "6cba336fc1a3a5f69c0fa8337366fa4bccf5605ab9818beb9b2d08f473b999ef"
         },
         "arm64": {
-            "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v0.3.4/usque-v0.3.4-windows-arm64.msi",
-            "hash": "63eb9d4c0c66d059444ad13cb2e14a79e44cf1c1d441b854dfcbeb364b3a386a"
+            "url": "https://github.com/GeorgeXie2333/usque-app/releases/download/v0.3.5/usque-v0.3.5-windows-arm64.msi",
+            "hash": "67ed9e512d36f672c8f439cdcd373ad5ca0daaa1ea6604b0f135a5dc4927578c"
         }
     },
     "extract_dir": "PFiles64\\Usque",
